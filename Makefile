@@ -35,10 +35,14 @@ test-watch:
 coverage:
 	@$(PYTHON_RUNNER) pytest --cov=$(PYTHON_TOOLS)
 
-docs:
+docs-gen:
 	mkdir -p $(DOCS_PATH)
 	@$(PYTHON_RUNNER) lazydocs \
 		--output-path=$(DOCS_PATH) \
 		--overview-file=$(DOCS_OVERVIEW) \
 		--src-base-url=$(REPO_URL)/blob/main \
 		$(PYTHON_TOOLS)
+	@$(PYTHON_RUNNER) mkdocs build
+
+docs-publish:
+	@$(PYTHON_RUNNER) mkdocs gh-deploy --force

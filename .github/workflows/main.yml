@@ -40,3 +40,20 @@ jobs:
     - uses: ./.github/actions/setup-poetry
     - name: Run tests
       run: make test
+  gh-pages:
+    name: Deploy Github Pages
+    needs: unit-test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Python
+      uses: actions/setup-python@v1
+    - uses: ./.github/actions/setup-poetry
+    - name: Build docs
+      run: make docs-gen
+    - name: Setup Github Credentials
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+    - name: Deploy docs
+      run: make docs-publish
