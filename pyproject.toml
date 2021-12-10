@@ -15,8 +15,10 @@ pytest-cov = "^3.0.0"
 pytest-xdist = "^2.4.0"
 flake8 = "^4.0.1"
 black = "^21.12b0"
-mkdocstrings = "^0.16.2"
 commitizen = "^2.20.0"
+lazydocs = "^0.4.8"
+mkdocs = "^1.2.3"
+mkdocs-awesome-pages-plugin = "^2.6.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
