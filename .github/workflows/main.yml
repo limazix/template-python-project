@@ -18,7 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
     - uses: ./.github/actions/setup-poetry
@@ -34,7 +34,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
     - uses: ./.github/actions/setup-poetry
@@ -47,7 +47,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2
+      with:
+        pytthon-version: 3.x
     - uses: ./.github/actions/setup-poetry
     - name: Build docs
       run: make docs-gen
