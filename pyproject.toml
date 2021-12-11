@@ -19,6 +19,7 @@ commitizen = "^2.20.0"
 lazydocs = "^0.4.8"
 mkdocs = "^1.2.3"
 mkdocs-awesome-pages-plugin = "^2.6.1"
+mkdocs-coverage = "^0.2.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

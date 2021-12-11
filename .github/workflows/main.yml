@@ -51,6 +51,8 @@ jobs:
       with:
         python-version: 3.9
     - uses: ./.github/actions/setup-poetry
+    - name: Generate coverage report
+      run: make coverage-report
     - name: Build docs
       run: make docs-gen
     - name: Setup Github Credentials
